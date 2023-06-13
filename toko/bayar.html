@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    
+    <link
+      href="https://fonts.googleapis.com/css2?family=Signika:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gradient-to-t from-cyan-500 to-blue-500 min-h-screen">
+    <h1 class="text-5xl font-bold text-center mt-8 text-white drop-shadow-2xl">
+      Pembayaran
+    </h1>
+    <div class="absolute left-0 top-0 h-16 w-16">
+      <a href="index.html">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-6 h-6 text-white ml-6 mt-9" fill="currentColor" >
+          <path fill-rule="evenodd" d="M9.53 2.47a.75.75 0 010 1.06L4.81 8.25H15a6.75 6.75 0 010 13.5h-3a.75.75 0 010-1.5h3a5.25 5.25 0 100-10.5H4.81l4.72 4.72a.75.75 0 11-1.06 1.06l-6-6a.75.75 0 010-1.06l6-6a.75.75 0 011.06 0z" clip-rule="evenodd"/>
+        </svg>
+      </a>
+    </div>
+
+    <div class="flex text-center mt-20">
+      <div class="grow h-14"></div>
+      <div class="grow-0 h-10 space-y-6">
+        <table class="">
+          <tbody>
+            <tr class="h-16">
+              <td>
+                <span class="font-semibold text-2xl text-white">Total Belanja :</span>
+              </td>
+              <td>
+                <div class="rounded-full bg-white p-2 text-xl text-sky-800 w-64 font-bold tracking-wide text-center border border-sky-900 ml-5"><span id="uang"></span></div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <script>
+          var parameter = new URLSearchParams(window.location.search);
+          var nilaiVar = parameter.get('nilai');
+      
+          console.log(nilaiVar); // Output: Nilai yang akan dikirim
+          var spanElement = document.getElementById('uang');
+          spanElement.innerHTML = "Rp "+nilaiVar;     
+        </script>
+
+        <h3 class="text-3xl font-semibold text-center mt-28 drop-shadow-2xl text-white">
+          Pilih Metode <br />
+          Pembayaran
+        </h3>
+        <form action="">
+          <div class="box-content h-64 w-80 p-4 border-2 mx-auto rounded-2xl border-blue-800 bg-white">
+                <div class="grid gap-4 grid-cols-3 grid-rows-3 items-center h-60">
+                    <input type="checkbox" id="myCheckbox" value="gambar/Logo_dana_blue.svg.png" name="checkoption" onclick="checkedOnClick(this);" class="bg-contain bg-center bg-no-repeat appearance-none w-full h-full rounded-md checked:bg-slate-200" style="background-image: url(gambar/Logo_dana_blue.svg.png);">
+                    <input type="checkbox" id="myCheckbox" value="gambar/Logo\ ShopeePay.png" name="checkoption" onclick="checkedOnClick(this);" class="bg-contain bg-center bg-no-repeat appearance-none w-full h-full rounded-md checked:bg-slate-200" style="background-image: url(gambar/Logo\ ShopeePay.png);">
+                    <input type="checkbox" id="myCheckbox" value="gambar/Logo_ovo_purple.svg.png" name="checkoption" onclick="checkedOnClick(this);" class="bg-contain bg-center bg-no-repeat appearance-none w-full h-full rounded-md checked:bg-slate-200" style="background-image: url(gambar/Logo_ovo_purple.svg.png);">
+                    <input type="checkbox" id="myCheckbox" value="gambar/Logo-BRI-Bank-Rakyat-Indonesia-PNG-Terbaru.png" name="checkoption" onclick="checkedOnClick(this);" class="bg-contain bg-center bg-no-repeat appearance-none w-full h-full rounded-md checked:bg-slate-200" style="background-image: url(gambar/Logo-BRI-Bank-Rakyat-Indonesia-PNG-Terbaru.png);">
+                    <input type="checkbox" id="myCheckbox" value="gambar/Bank_Central_Asia.svg.png" name="checkoption" onclick="checkedOnClick(this);" class="bg-contain bg-center bg-no-repeat appearance-none w-full h-full rounded-md checked:bg-slate-200" style="background-image: url(gambar/Bank_Central_Asia.svg.png);">
+                    <input type="checkbox" id="myCheckbox" value="gambar/Logo-Link-Aja-PNG-–-IfoxSoft.Com_.png" name="checkoption" onclick="checkedOnClick(this);" class="bg-contain bg-center bg-no-repeat appearance-none w-full h-full rounded-md checked:bg-slate-200" style="background-image: url(gambar/Logo-Link-Aja-PNG-–-IfoxSoft.Com_.png);">
+                    <input type="checkbox" id="myCheckbox" value="gambar/ef66efc2d7bafd26784e4b3edd663f6a.png" name="checkoption" onclick="checkedOnClick(this);" class="bg-contain bg-center bg-no-repeat appearance-none w-full h-full rounded-md checked:bg-slate-200" style="background-image: url(gambar/ef66efc2d7bafd26784e4b3edd663f6a.png);">
+                    
+                    <!-- Script -->
+                    <script type="text/javascript">
+                        function checkedOnClick(el){
+                           // Select all checkboxes by class
+                           var checkboxesList = document.getElementsByName("checkoption");
+                           for (var i = 0; i < checkboxesList.length; i++) {
+                              checkboxesList.item(i).checked = false; // Uncheck all checkboxes
+                           }
+                     
+                           el.checked = true; // Checked clicked checkbox
+                      
+                        }
+                        
+                        function passCheckboxValue() {
+                          var checkbox = document.getElementsByName("checkoption");
+                          var url = "confirm.html?nilai=" + encodeURIComponent(nilaiVar);
+                          window.location.href = url;
+                        }
+                        </script>
+                </div>
+
+                
+
+            </div>  
+            <div class="mt-10 flex flex-row mx-5">
+                <a href="index.html" class="basis-5/12">
+                    <div class="bg-blue-800 p-2 rounded-full text-white font-semibold w-10/12 hover:bg-blue-700 mx-auto">Kembali</div>
+                </a>
+                <div class="basis-7/12">
+                    <input type="button" value="Check Out" class="bg-blue-800 p-2 rounded-full text-white font-semibold w-10/12 hover:bg-blue-700" onclick="passCheckboxValue()">
+                </div>
+            </div>
+        </form>
+            
+        </div>
+        <div class="grow h-14"></div>
+        </div>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"  type="text/javascript"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script type="text/javascript" src="script.js"></script> 
+        
+  </body>
+</html>

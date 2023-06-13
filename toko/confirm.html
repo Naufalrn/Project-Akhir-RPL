@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Signika:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gradient-to-t from-cyan-500 to-blue-500 min-h-screen">
+    <h1 class="text-5xl font-bold text-center mt-8 text-white drop-shadow-2xl">
+      Konfirmasi<br>Pembayaran
+    </h1>
+    
+    <div class="flex text-center mt-20">
+      <div class="grow h-14"></div>
+      <div class="grow-0 h-10 space-y-6">
+        <div class="h-72 w-80 p-4 border-2 mx-auto rounded-2xl border-blue-800 bg-white font-bold text-2xl text-sky-700">
+              <span>Pembayaran Melalui</span>
+              <img id="myImage" src="gambar/Bank_Central_Asia.svg.png" alt="" class="w-1/2 mx-auto my-4">
+              <span>Sebesar</span><br>
+              <span id="harga"></span><br>
+              <script>
+                var parameter = new URLSearchParams(window.location.search);
+                var nilaiVar = parameter.get('nilai');
+            
+                console.log(nilaiVar); // Output: Nilai yang akan dikirim
+                var spanElement = document.getElementById('harga');
+                spanElement.innerHTML = "Rp "+nilaiVar;
+              </script>
+              <span>Telah Berhasil Dilakukan</span>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-14 h-14 text-green-600 mx-auto" fill="currentColor" >
+                <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm13.36-1.814a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z" clip-rule="evenodd" />
+              </svg>
+        </div>
+        <div class="text-2xl font-bold text-center mt-8 text-white drop-shadow-2xl">
+          Terima Kasih Sudah<br>Berbelanja di Toko Kami
+        </div>
+        <div>
+          <a href="index.html">
+            <button class="bg-blue-800 p-2 rounded-full text-white font-semibold w-80 hover:bg-blue-700 mt-36">
+              Back To Menu
+            </button>
+          </a>
+        </div>
+      </div>
+      <div class="grow h-14"></div>
+      </div>
+    
+        
+  </body>
+</html>
